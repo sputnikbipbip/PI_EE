@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>RECIPE</title>
+</head>
+<body>
+<form action="/trinkas/logout?_method=DELETE" method="POST">
+    <button type="submit">Log Out</button>
+</form>
+
+<h1>{{groupTitle}} </h1>
+    <p>Description : {{description}}</p>
+    <p class="groupId"><label>Id:</label>{{id}}</p>
+    <p>Sum Calories:{{calories}}</p>
+    <h3>Recipes</h3>
+    <table>
+        {{#each recipes}}
+            <tr class="recipeItem">
+                <td class="recipeName">{{title}}</td>
+                <td><a href={{details}} class="btn btn-primary">Details</a></td>
+                <td><button class="btn btn-primary">Delete</button></td>
+            </tr>
+        {{/each}}
+    </table>
+</table>
+</body>
+</html>

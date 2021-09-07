@@ -1,0 +1,45 @@
+<html>
+<body>
+<diV>
+    {{#if messages.error}}
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{messages.error}}
+        </div>
+    {{/if}}
+</diV>
+     <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="active"> Sign In </h2>
+
+        <!-- Icon -->
+
+            <img src="https://www.lrschools.org/cms/lib/WA01000523/Centricity/Domain/328/Year-in-Food-2012-Recipes-Feat-602x338.jpg" id="icon" alt="User Icon" />
+
+            <!-- Login Form -->
+            <form action="/trinkas/login" method="POST">
+
+                <div>
+                    <br>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <br>
+                <input type="submit" class="button" value="Log In">
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a link="underlineHover" href="/trinkas/register">Register</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
+

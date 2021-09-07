@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>RECIPE</title>
+</head>
+<body>
+<form action="/trinkas/logout?_method=DELETE" method="POST">
+    <button type="submit">Log Out</button>
+</form>
+<h2>Add new group</h2>
+<form action="/trinkas/groups/createGroup" method="POST">
+    <label for="groupName">Group Name:</label><br>
+    <input type="text" id="groupName" name="groupName"><br>
+    <label for="description">Description:</label><br>
+    <input type="text" id="description" name="description"><br><br>
+    <input type="submit" value="Create Group">
+</form>
+<br>
+<table class="table">
+    <h1>Groups</h1>
+    {{#each groups}}
+        <tr id="group">
+            <td class="name">{{title}}</td>
+            <td class="groupId">{{id}}</td>
+            <td><a href={{details}} class="btn btn-primary">Details</a></td>
+            <td><button class="btn btn-primary">Delete Group</button></td>
+        </tr>
+    {{/each}}
+</table>
+</body>
+</html>

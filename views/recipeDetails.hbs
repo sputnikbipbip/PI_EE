@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>RECIPE</title>
+</head>
+<form action="/trinkas/logout?_method=DELETE" method="POST">
+    <button type="submit">Log Out</button>
+</form>
+
+
+
+<form method="POST" id="addRecipeToGroup">
+    <input type="search" class="group" name="groupId" id="groupId" placeholder="Select Group...">
+    <button type="submit" class="addGroupButton">Add To group</button>
+</form>
+
+
+<h1>Recipes: </h1>
+<h2 id="recipeName">{{title}}</h2>
+<img src={{image}}>
+<ul>
+    <li>rid : {{rid}}</li>
+    <li>Price per serving : {{pricePerServing}}</li>
+    <li>Ready in Minutes : {{readyInMinutes}}</li>
+    <li>Servings : {{servings}}</li>
+    <li>Calories : {{calories.amount}} {{calories.unit}}</li>
+    <li>Health Score : {{healthScore}}</li>
+    <h2 Steps></h2>
+    {{#each steps}}
+        <ul>
+            {{#each steps}}
+                <h3>Step number {{number}}</h3>
+                <li>Step: {{step}}</li>
+                <h4>Ingredients</h4>
+                <ul>
+                    {{#each ingredients}}
+                        <li>{{name}}</li>
+                    {{/each}}
+                </ul>
+                <h4>Equipment</h4>
+                <ul>
+                    {{#each equipment}}
+                        <li>{{name}}</li>
+                    {{/each}}
+                </ul>
+                <p>Takes about {{length.number}} {{length.unit}}</p>
+            {{/each}}
+
+        </ul>
+    {{/each}}
+</ul>
+
+</body>
+</html>
